@@ -11,7 +11,7 @@ class Solution(object):
                 num = num / 2
                 steps += 1
             else:
-                num = num - 1
+                num -=  1
                 steps += 1
 
         return steps
