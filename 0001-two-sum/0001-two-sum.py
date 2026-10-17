@@ -5,10 +5,11 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        L = []
-        for i in range (len(nums)):
-            for j in range(i+1,len(nums)):
-                if(nums[i] + nums[j] == target):
-                    L.append(i)
-                    L.append(j)
-        return L
+        mp = {}
+        for i in range(len(nums)):
+            complement = target - nums[i]
+
+            if(complement in mp):
+                return[mp[complement], i]
+            
+            mp[nums[i]] = i
