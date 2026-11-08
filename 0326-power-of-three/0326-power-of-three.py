@@ -4,15 +4,11 @@ class Solution(object):
         :type n: int
         :rtype: bool
         """
-        if(n<=0):
+        if n <= 0:
             return False
+        
+        while n % 3 == 0:
+            n = n // 3
 
-        power = 1
-
-        while(power < n):
-            power *= 3
-
-        if(power == n):
-            return True
-        else:
-            return False
+        return n == 1
+        
